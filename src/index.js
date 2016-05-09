@@ -55,7 +55,7 @@ export default class Rater extends Component {
     let rating = getRatingFromDOMEvent(e, this.props)
       , lastRating = Number(this.state.lastRating)
       , callback = this.props.onRate
-    if (rating < 0 || e.target.getAttribute('class').indexOf('is-disabled') > -1) {
+    if (rating < 0 || e.target.getAttribute('class') && e.target.getAttribute('class').indexOf('is-disabled') > -1) {
       return
     }
     this.setState({
